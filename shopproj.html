@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+</head>
+<style>
+    .nav{
+        background-color:rgb(230, 210, 214);
+        height: 65px;;
+        width: 100%;
+        position: relative;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        
+    }
+    .nav-links{
+        list-style-type:none;
+        display: flex;
+        gap:20px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 20px;
+        position: absolute;
+        left:800px;
+    }
+    .text{
+        margin-top: 10px;
+    }
+    a{
+        text-decoration: none;
+        color: black;
+        padding:10px 20px;
+    }
+    .logo{
+        position: absolute;
+        left:10px;
+        display: flex;
+        gap:5px;
+    }
+    .name{
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 25px;
+    }
+    a:hover{
+        border-bottom: 4px solid rgb(228, 103, 126);
+    }
+    #menu-toggle{
+        display: none;
+    }
+    .menu-icon{
+        font-size: 25px;
+        cursor: pointer;
+        position: absolute;
+        top:50px;
+        right: 20px;
+        transform: translateY(-20px);
+        display: none;
+        padding: 10px 0;
+    }
+    .intro{
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        margin-top: 150px;
+        margin-left: 30px;
+        float: left;
+        font-size: 30px;
+    }
+    .shop-btn{
+        background-color: rgb(228, 103, 126);
+        padding: 15px;
+        color:white;
+        border-radius: 30px;
+        cursor: pointer;
+    }
+    .shop-img{
+        width: 700px;
+        height: 600px;
+        
+    }
+    .new-arrivals{
+        text-align: center;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 50px;
+        text-decoration: underline rgb(228, 103, 126);
+    }
+    .card{
+        width: 380px;
+        height: 480px;
+        box-shadow: 5px 5px 5px 5px rgb(215, 214, 214);
+        border-radius: 5%;
+        margin-left: 20px;
+        position: relative;
+    }
+    .card img{
+        width: 330px;
+        height: 230px;
+        padding: 25px;
+    }
+    .card h1{
+        font-size: 20px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        text-align: center;
+    }
+    .card p{
+        font-size: 20px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        opacity: 0.7;
+        padding-left: 10px;
+    }
+    .rating{
+        color: gold;
+        padding-left: 10px;
+    }
+    .buttons{
+        display: flex;
+        gap:180px;
+    }
+    .btn1{
+        border: none;
+        background-color: green;
+        color: white;
+        border-radius: 30px;
+        padding: 15px;
+        margin-left: 10px;  
+        cursor: pointer; 
+    }
+    .btn2{
+        border: none;
+        background-color:rgb(228, 103, 126);
+        color: white;
+        border-radius: 30px;
+        padding: 10px;
+        margin-left: 10px;
+        cursor: pointer;
+    }
+    .grid-container{
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(350px,1fr));
+        gap:10px;
+    }
+    .card img:hover{
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
+    @media(max-width:900px)
+    {
+        .nav-links{
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top:60px;
+            left:0px;
+            background-color: white;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 4px 6px rgb(140,139,139);
+        }
+        .menu-icon{
+            display: block;
+        }
+        #menu-toggle:checked ~ .nav-links{
+            display: flex;
+        }
+    }
+</style>
+<body>
+    <header>
+        <div class="nav">
+            <div class="logo">
+                <i class="fa-solid fa-bag-shopping" style="color:rgb(228, 103, 126);font-size: 30px;margin-top: 20px;"></i>
+                <p class="name">My Shop</p>
+            </div>
+            <!-- toggle button -->
+            <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle" class="menu-icon">
+                <i class="fas fa-bars"></i>
+            </label>
+            <ul class="nav-links">
+                <li class="text"><a href=#home>Home</a></li>
+                <li class="text"><a href=#new>New Arrivals</a></li>
+                <li class="text"><a href=#>Shop</a></li>
+                <li class="text"><a href=#>Contact</a></li>
+                <li><a href=#><i class="fa-solid fa-cart-shopping" style="color:rgb(228, 103, 126);font-size:30px;margin-bottom: 20px;"></i></a></li>
+            </ul>
+        </div>
+    </header>
+    <section style="overflow: auto;">
+        <div class="intro" id="home">
+            <h1 style="font-size:50px">Buy Your <span style="color:rgb(228, 103, 126);">Favourites</span></h1>
+            <p>Shop Your Dresses,accessories at very lowest price<br>
+                in our shop at any time without any worries.</p>
+            <button class="shop-btn">Shop Now</button>
+        </div>
+        <div style="float:right;">
+            <img src="shop.webp" alt="img" class="shop-img">
+        </div>
+    </section>
+    <section>
+        <h1 class="new-arrivals" id="new">New Arrivals</h1>
+        <div class="grid-container">
+            <!-- card start -->
+            <div class="card">
+                <img src="shirt.webp" alt="shirt">
+                <h1>United colors of Benetton</h1>
+                <p>Price:$500</p>
+                <div class="rating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i>
+                </div><br>
+                <div class="buttons">
+                    <button class="btn1">Buy Now</button>
+                    <button class="btn2">Add to Cart</button>
+                </div>
+            </div>
+            <!-- card end -->
+            <!-- card start -->
+            <div class="card">
+                <img src="dress.jpg" alt="dress">
+                <h1>Casual and Fokloric</h1>
+                <p>Price:$700</p>
+                <div class="rating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i>
+                </div><br>
+                <div class="buttons">
+                    <button class="btn1">Buy Now</button>
+                    <button class="btn2">Add to Cart</button>
+                </div>
+            </div>
+            <!-- card end -->
+            <!-- card start -->
+            <div class="card">
+                <img src="watch.jpg" alt="watch">
+                <h1>Classic Time & Elegant Watch</h1>
+                <p>Price:$400</p>
+                <div class="rating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i>
+                </div><br>
+                <div class="buttons">
+                    <button class="btn1">Buy Now</button>
+                    <button class="btn2">Add to Cart</button>
+                </div>
+            </div>
+            <!-- card end -->
+            <!-- card start -->
+            <div class="card">
+                <img src="shoe.jpg" alt="shoe">
+                <h1>Trendy Nike Shoe</h1>
+                <p>Price:$200</p>
+                <div class="rating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i>
+                </div><br>
+                <div class="buttons">
+                    <button class="btn1">Buy Now</button>
+                    <button class="btn2">Add to Cart</button>
+                </div>
+            </div>
+            <!-- card end -->
+            <!-- card start -->
+            <div class="card">
+                <img src="plant.webp" alt="plant">
+                <h1>Modern Home Decor</h1>
+                <p>Price:$150</p>
+                <div class="rating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i>
+                </div><br>
+                <div class="buttons">
+                    <button class="btn1">Buy Now</button>
+                    <button class="btn2">Add to Cart</button>
+                </div>
+            </div>
+            <!-- card end -->
+            <!-- card start -->
+            <div class="card">
+                <img src="acessories.jpg" alt="accessories">
+                <h1>Trendy Totes and Elegant earrings</h1>
+                <p>Price:$300</p>
+                <div class="rating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i>
+                </div><br>
+                <div class="buttons">
+                    <button class="btn1">Buy Now</button>
+                    <button class="btn2">Add to Cart</button>
+                </div>
+            </div>
+            <!-- card end -->
+            <!-- card start -->
+            <div class="card">
+                <img src="glass.jpg" alt="glass">
+                <h1>Eyeglasses</h1>
+                <p>Price:$100</p>
+                <div class="rating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i>
+                </div><br>
+                <div class="buttons">
+                    <button class="btn1">Buy Now</button>
+                    <button class="btn2">Add to Cart</button>
+                </div>
+            </div>
+            <!-- card end -->
+            <!-- card start -->
+            <div class="card">
+                <img src="lipstick.jpg" alt="lipstick">
+                <h1>Elegant lipstick</h1>
+                <p>Price:$250</p>
+                <div class="rating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i>
+                </div><br>
+                <div class="buttons">
+                    <button class="btn1">Buy Now</button>
+                    <button class="btn2">Add to Cart</button>
+                </div>
+            </div>
+            <!-- card end -->
+        </div>
+    </section>
+</body>
+</html>
